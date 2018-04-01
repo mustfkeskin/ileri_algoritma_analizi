@@ -14,19 +14,22 @@ int h(int a, int b);
 
 int main()
 {
-    int n = 15;
-    int m = 21;
+    int n = 15; // A dizisinin boyu;
+    int m = 21; // hash tablosunun uzunluğu;
     int A[15] = {1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5};
     int hashTable[21][2];
     int search;
     int index;
 
+
+    //hash tablosundaki herşey -1 ile ilklendiriliyor.
     for(int i = 0; i < m; i++) {
       for(int j = 0; j < 2; j++){
         hashTable[i][j] = -1;
       }
    }
 
+    // A dizisindeki tüm elemanlar üzerinde dolaşılıyor.
     int i = 0;
     while (i < n){
 
@@ -40,7 +43,7 @@ int main()
         }
         else if(hashTable[index][0] == search){
             hashTable[index][1] += 1;
-            printf("bulundu search: %d  index: %d \n", search, index);
+            printf("bulundu sayac artirildi search: %d  index: %d \n", search, index);
         }
         else{
             while(hashTable[index][0] != -1 && hashTable[index][0] != search)
